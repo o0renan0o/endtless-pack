@@ -1,0 +1,57 @@
+# =============================================================
+# COMANDOS LUCKPERMS - ENDTLESS (3 ranks)
+# =============================================================
+# Cola UM POR UM no console do servidor (BedHosting -> Console).
+# =============================================================
+
+# 1) CRIAR OS 3 GRUPOS
+lp creategroup enderlord
+lp creategroup admin
+lp creategroup vip
+
+# 2) DEFINIR WEIGHT (hierarquia: enderlord > admin > vip > default)
+lp group enderlord setweight 1000
+lp group admin     setweight 900
+lp group vip       setweight 200
+lp group default   setweight 50
+
+# 3) HERANCA (rank superior herda permissoes dos inferiores)
+lp group enderlord parent add admin
+lp group admin     parent add vip
+
+# 4) PREFIX (usado no chat, do lado do nick)
+lp group enderlord meta setprefix 1000 "&8[&5&lENDER&d&lLORD&8] "
+lp group admin     meta setprefix 900  "&8[&c&lADM&8] "
+lp group vip       meta setprefix 200  "&8[&e&lVIP&8] "
+
+# 5) PERMISSOES BASICAS
+# EnderLord tem acesso a tudo
+lp group enderlord permission set *
+
+# Admin tem permissoes de moderacao + comandos do Endtless
+lp group admin permission set minecraft.command.function true
+lp group admin permission set minecraft.command.give true
+lp group admin permission set bukkit.command.kick true
+lp group admin permission set bukkit.command.ban true
+lp group admin permission set bukkit.command.tempban true
+lp group admin permission set bukkit.command.gamemode true
+lp group admin permission set bukkit.command.tp true
+
+# VIP - pode usar /trigger endtless_shop (qualquer player ja pode por default)
+# Aqui voce pode adicionar permissoes extras pra VIPs:
+# lp group vip permission set essentials.fly true
+# lp group vip permission set essentials.kit.vip true
+
+# =============================================================
+# ATRIBUIR RANKS A PLAYERS
+# =============================================================
+
+# VOCE como EnderLord (troca o nick se for diferente)
+lp user o0renan0o parent set enderlord
+
+# Exemplos para outros players (troque os nicks):
+# lp user NickAdmin parent set admin
+# lp user NickVIP   parent set vip
+
+# Para REMOVER o rank de alguem (volta a ser Membro/default):
+# lp user NickPlayer parent set default
