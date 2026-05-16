@@ -1,32 +1,33 @@
 # =============================================================
-# GROUPS.YML - ENDTLESS
-# Ranks: EnderLord, Admin, VIP, Default (sem rank)
+# GROUPS.YML - ENDTLESS (TAB v6 compatible)
+# Ranks: EnderLord, Admin, VIP, Default
 # =============================================================
+# TAB v6 NAO usa mais abovename/belowname aqui (sao definidos
+# automaticamente via belowname-objective/playerlist-objective).
+# tagprefix aparece no chat e flutuando acima da cabeca quando
+# scoreboard-teams.unlimited-nametag-mode.enabled=true (ja esta).
 
-# Player sem rank (padrao)
 _DEFAULT_:
-  tabprefix: "&8[&7Membro&8] "
-  tagprefix: "&7"
-  abovename: ""
-  belowname: ""
+  tabprefix: "%luckperms-prefix%"
+  tagprefix: "%luckperms-prefix%"
+  customtabname: "%player%"
+  tabsuffix: "%luckperms-suffix%"
+  tagsuffix: "%luckperms-suffix%"
 
-# ENDERLORD - dono do servidor (voce)
 enderlord:
-  tabprefix: "&8[&5&lENDER&d&lLORD&8] "
-  tagprefix: "&5&l"
-  abovename: "&5&l⚜ &dENDER&5LORD &5&l⚜"
-  belowname: ""
+  tabprefix: "&8[&5&lENDER&d&lLORD&8] &d"
+  tagprefix: "&5&l⚜ &dENDER&5LORD &5&l⚜ &d"
+  tabsuffix: ""
+  tagsuffix: ""
 
-# ADMIN
 admin:
-  tabprefix: "&8[&c&lADM&8] "
-  tagprefix: "&c&l"
-  abovename: "&c&l⚔ ADM ⚔"
-  belowname: ""
+  tabprefix: "&8[&c&lADM&8] &c"
+  tagprefix: "&c&l⚔ ADM ⚔ &c"
+  tabsuffix: ""
+  tagsuffix: ""
 
-# VIP
 vip:
-  tabprefix: "&8[&e&lVIP&8] "
-  tagprefix: "&e&l"
-  abovename: "&e&l✦ VIP ✦"
-  belowname: ""
+  tabprefix: "&8[&e&lVIP&8] &e"
+  tagprefix: "&e&l✦ VIP ✦ &e"
+  tabsuffix: ""
+  tagsuffix: ""
